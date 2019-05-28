@@ -1,0 +1,471 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Contact</title>
+    <!-- <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+    <!--<link rel="stylesheet" href="css/global.css" />-->
+    <!--<script type="application/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>-->
+    <!--<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+    <script src="js/validate.js"></script>
+    <!--引入百度地图js-->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+    <!--[if lt IE 9]>
+              <script src="js/html5shiv.js"></script>
+              <script src="js/respond.min.js"></script>
+      <![endif]-->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/jq3.2.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style type="text/css">
+        /*引用百度地图API*/
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .iw_poi_title {
+            color: #CC5522;
+            font-size: 14px;
+            font-weight: bold;
+            overflow: hidden;
+            padding-right: 13px;
+            white-space: nowrap
+        }
+
+        .iw_poi_content {
+            font: 12px arial,sans-serif;
+            overflow: visible;
+            padding-top: 4px;
+            white-space: -moz-pre-wrap;
+            word-wrap: break-word
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "微软雅黑";
+        }
+
+        .navbar {
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .container-fluid {
+            font-size: 14px;
+        }
+
+        .navbar-header {
+            height: 80px;
+        }
+
+        .navbar-nav > li > a {
+            height: 80px;
+            line-height: 50px;
+            box-sizing: border-box;
+            overflow: hidden;
+            /*transition:border 500ms cubic-bezier(0.4, 0, 0.2, 1);*/
+        }
+
+            .navbar-nav > li > a:focus {
+                color: #9d9d9d !important;
+            }
+
+            .navbar-nav > li > a:hover {
+                color: #00a5e3 !important;
+                border-bottom: 3px solid #00a5e3;
+            }
+
+                .navbar-nav > li > a:hover:after {
+                    display: block;
+                }
+
+        .navbar-brand {
+            text-align: center;
+            padding: 0 15px;
+        }
+
+            .navbar-brand img {
+                height: 80px;
+                margin-bottom: 4px;
+                margin-left: 24px;
+            }
+
+        .active a {
+            border-bottom: 3px solid #00a5e3;
+        }
+
+        .global-page-header {
+            background-attachment: fixed;
+            background-size: cover;
+            padding: 100px 0 10px 0;
+            position: relative;
+            /*background:#00a5e3;*/
+            color: #fff;
+            background: url(image/contact.jpg) no-repeat;
+            background-position-y: bottom;
+        }
+
+            .global-page-header .block {
+                position: relative;
+                z-index: 99;
+                text-align: center;
+            }
+
+            .global-page-header h2 {
+                font-size: 42px;
+                font-weight: bold;
+                color: #fff;
+                text-transform: uppercase;
+                font-family: 'Roboto Condensed', sans-serif;
+            }
+
+            .global-page-header .breadcrumb {
+                background: none;
+                font-size: 16px;
+                padding: 5px 0;
+            }
+
+                .global-page-header .breadcrumb li a {
+                    color: #fff;
+                }
+
+                .global-page-header .breadcrumb .active {
+                    color: #fff;
+                }
+
+        #contact-section {
+            padding: 0 0 10px 0;
+            background: #fff;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-family: 'Roboto Condensed', sans-serif;
+            color: #00a5e3;
+        }
+
+        #contact-section input {
+            display: block;
+            height: 40px;
+            padding: 6px 12px;
+            font-size: 13px;
+            line-height: 1.428571429;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px !important;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+            -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+            transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+            border: 1px solid rgba(111, 121, 122, 0.3);
+            box-shadow: none;
+            -webkit-box-shadow: none;
+        }
+
+        #contact-section .contact-form .btn-send {
+            margin-top: 25px;
+            color: #fff;
+            outline: none;
+            background: #00a5e3;
+        }
+
+        #contact-section .address-details {
+            padding-top: 70px;
+        }
+
+        #contact-section .address, #contact-section .email, #contact-section .phone {
+            text-align: center;
+            background: #F7F7F7;
+            padding: 20px 0 40px 0;
+            margin-bottom: 20px;
+        }
+
+        strong {
+            color: #00a5e3;
+            font-size: 18px;
+        }
+
+        .glyphicon {
+            color: #00a5e3;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#one">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.html" class="navbar-brand"><img src="image/logo.png" /></a>
+            </div>
+            <div class="navbar-collapse collapse" id="one">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="present.html">公司介绍</a></li>
+                    <li><a href="culture.html">企业文化</a></li>
+                    <li><a href="#" title="正在更新中">机器人展示</a></li>
+                    <li><a href="#" title="正在更新中">用户APP展示</a></li>
+                    <li><a href="#" title="正在更新中">后台管控</a></li>
+                    <li><a href="#" title="正在更新中">点餐系统展示</a></li>
+                    <li><a href="#" title="正在更新中">功能演示</a></li>
+                    <li class="active"><a href="#">联系我们</a></li>
+            
+                </ul>
+            </div>
+            </div>
+    </nav>
+    <!--联系我们-->
+       <section class="global-page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="block">
+                            <h2>Contact</h2>
+                            <ol class="breadcrumb">
+                                <li>
+                                    <a href="index.html">
+                                        <i class="glyphicon glyphicon-home" aria-hidden="true"></i>Home
+                                    </a>
+                                </li>
+                                <li class="active">Contact</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </section>
+     <!--留言和地图-->
+		<section id="contact-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="block">
+                            <h2 class="subtitle">联系我们</h2>
+                            <div class="contact-form">
+                                <form id="contact-form" action="contact.php" method="post" role="form">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="您的姓名" class="form-control" name="name" id="name" autocomplete="off">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" placeholder="您的邮箱" class="form-control"  name="email" id="email" autocomplete="off">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" placeholder="手机号" class="form-control"  name="phone" id="phone"autocomplete="off">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea rows="6" placeholder="请输入您的留言"   class="form-control" name="message" id="message" style="resize:none;"></textarea>    
+                                    </div> 
+                                    <div id="button">
+                                        <input type="button" id="contact-submit" class="btn btn-send" value="提交留言" onclick="toValidate()" data-toggle="modal" data-target=".bs-example-modal-sm">
+                                    </div>                      
+                                </form>
+                                <!--模态框弹出-->
+                                <!--<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  									<div class="modal-dialog modal-sm" role="document">
+    									<div class="modal-content">提交成功</div>
+  									</div>
+								</div>-->
+								<!--模态框结束-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                         <div>
+                            <h2 class="subtitle">找到我们</h2>
+                            <!--百度地图容器-->
+  							<div style="width:100%;height:372px;border:#ccc solid 1px;" id="dituContent"></div>
+                         </div>
+                        </div>
+                    </div>
+                <div class="row address-details">
+                    <div class="col-md-4 col-sm-7">
+        		        <p style="font-size:12px;line-height:30px;color:#666;">
+        					<i class="glyphicon glyphicon-edit"></i>
+        				    <strong>电子邮件</strong>
+        				    <br>Email：<u>kongguanghua@idea-a.com.cn</u>&nbsp;(业务咨询)
+        				    <br>Email：<u>xianzhiyong@idea-a.com.cn</u>&nbsp;(技术咨询) 
+        					<br>Email：<u>caomingjiang@idea-a.com.cn</u>&nbsp;(综合事务)
+        				</p>
+        			</div>
+        			<div class="col-md-3 col-sm-5">
+        				<p style="font-size:12px;line-height:30px;color:#666;">
+        					<i class="glyphicon glyphicon-earphone"></i>
+        					<strong>即时通讯</strong>
+        					<br>Q Q： 5959796&nbsp;(业务咨询)
+        		    		<br>Q Q： 284584415&nbsp;(技术咨询)
+        		    		<br>Q Q： 494587081&nbsp;(综合事务)
+        				</p>
+        			</div>
+        			<div class="col-md-3 col-sm-7">
+        				<p style="font-size:12px;line-height:30px;color:#666;">
+        					<i class="glyphicon glyphicon-phone"></i>
+        					<strong>移动电话</strong>
+        					<br>+86 13590332602&nbsp;(业务咨询)
+        		    		<br>+86 13410782680&nbsp;(技术咨询)
+        		    		<br>+86 13760231411&nbsp;(综合事务)
+        				</p>
+        			</div>
+        			<div class="col-md-2 col-sm-5">
+        				<p style="font-size:12px;line-height:30px;color:#666;">
+        					<i class="glyphicon glyphicon-phone-alt"></i>
+        					<strong>公司固话</strong>
+        					<br>0755-27210919<br>
+        				</p>
+        			</div>
+                </div>
+            </div>
+        </section>
+
+
+</body>
+<!--提交留言验证-->
+<script>
+	function toValidate(){
+		var val = new validate({
+			rules:{
+				name:"notEmpty",   
+				email:"email",
+				phone:"mobile",
+				message:"notEmpty"
+			},
+			//执行函数
+			submitFun:function(){
+         			$.ajax({
+                		url:"Handler.ashx",
+                		type: "POST",
+                        data: {
+                	    	"Name": $('#name').val(),  
+                			"Email":$('#email').val(),  
+                			"Phone":$('#phone').val() ,
+                			"Message":$('#message').val()
+                    	},
+                        success: function (data) {
+                            if (data = 200 || data==0) {  
+                				alert("提交成功啦")
+                                window.location.reload(); 
+                                $('#message').val("");
+             				}  
+                    	},
+               			error:function(err) {
+                     		 
+                		}
+            		});
+            		//提交完成
+     			}  
+		})
+	}
+</script>
+
+<!--引入百度地图-->
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+    
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(113.878088,22.567825);//定义一个中心点坐标
+        map.centerAndZoom(point,18);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+    
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+    
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+	var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+	map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+	var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+	map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+	var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+	map.addControl(ctrl_sca);
+    }
+    
+	 //标注点数组
+    var markerArr = [{title:"深圳壹智云科技有限公司",content:"我的备注",point:"113.877086|22.567583",isOpen:0,icon:{w:23,h:25,l:69,t:21,x:9,lb:12}}
+		 ];	 
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+			var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+			var iw = createInfoWindow(i);
+			var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-25)});
+			marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+						border:"none",
+                        color:"#000",
+                        cursor:"pointer",
+            });
+			
+			(function(){
+				var index = i;
+				var _iw = createInfoWindow(i);
+				var _marker = marker;
+				_marker.addEventListener("click",function(){
+				    this.openInfoWindow(_iw);
+			    });
+			    _iw.addEventListener("open",function(){
+				    _marker.getLabel().hide();
+			    })
+			    _iw.addEventListener("close",function(){
+				    _marker.getLabel().show();
+			    })
+				label.addEventListener("click",function(){
+				    _marker.openInfoWindow(_iw);
+			    })
+				if(!!json.isOpen){
+					label.hide();
+					_marker.openInfoWindow(_iw);
+				}
+			})()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("http://map.baidu.com/image/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    
+    initMap();//创建和初始化地图
+</script>
+</html>

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+	 
+		<title>留言板</title>
+        <style >
+            body {
+            margin:0px;
+            padding:0px;
+            }
+            .div1 {
+                width: 100%;
+                min-width: 500px;
+                overflow: hidden;
+                box-sizing: border-box;
+            }
+            .p1 {
+                width: 100%;
+                height: 50px;
+                line-height: 50px;
+                font-size: 20px;
+                text-align: center;
+                background: #286090;
+                color: white;
+                margin: 0 0 20px 0;
+            }
+        </style>
+	</head>
+
+	<body>
+		<div class="div1">
+			<p class="p1">留言内容</p>
+			<form  method='post'>
+				<div style='width:80%;padding:0 10%;margin-bottom:20px;'>
+					<p style='margin:0;margin-bottom:10px;'>姓名</p>
+					<input type='text' autocomplete='off' style='width:100%;height:34px;border:1px solid #ccc;border-radius:4px;outline:none;text-indent: 15px;' value='54656566566'>
+				</div>
+				<div style='width:80%;padding:0 10%;margin-bottom:20px;'>
+					<p style='margin:0;margin-bottom:10px;'>邮箱</p>
+					<input type='text' autocomplete='off' style='width:100%;height:34px;border:1px solid #ccc;border-radius:4px;outline:none;text-indent: 15px;'>
+				</div>
+				<div style='width:80%;padding:0 10%;margin-bottom:20px;'>
+					<p style='margin:0;margin-bottom:10px;'>手机号</p>
+					<input type='text' autocomplete='off' style='width:100%;height:34px;border:1px solid #ccc;border-radius:4px;outline:none;text-indent: 15px;'>
+				</div>
+				<div style='width:80%;padding:0 10%;margin-bottom:20px;'>
+					<p style='margin:0;margin-bottom:10px;'>留言</p>
+					<div contenteditable='true' style='width:100%;line-height:26px;border:1px solid #ccc;border-radius:4px;outline:none; padding:4px 15px;resize:none;box-sizing:border-box;'>454545</div>
+				</div>
+			</form>
+		</div>
+	</body>
+
+</html>
