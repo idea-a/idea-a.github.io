@@ -1,0 +1,354 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Robot</title>
+    <script src="js/validate.js"></script>
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/jq3.2.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style type="text/css">
+        /*引用百度地图API*/
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .iw_poi_title {
+            color: #CC5522;
+            font-size: 14px;
+            font-weight: bold;
+            overflow: hidden;
+            padding-right: 13px;
+            white-space: nowrap
+        }
+
+        .iw_poi_content {
+            font: 12px arial,sans-serif;
+            overflow: visible;
+            padding-top: 4px;
+            white-space: -moz-pre-wrap;
+            word-wrap: break-word
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "微软雅黑";
+        }
+
+        .navbar {
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .container-fluid {
+            font-size: 14px;
+        }
+
+        .navbar-header {
+            height: 80px;
+        }
+
+        .navbar-nav > li > a {
+            height: 80px;
+            line-height: 50px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+            .navbar-nav > li > a:focus {
+                color: #9d9d9d !important;
+            }
+
+            .navbar-nav > li > a:hover {
+                color: #00a5e3 !important;
+                border-bottom: 3px solid #00a5e3;
+            }
+
+                .navbar-nav > li > a:hover:after {
+                    display: block;
+                }
+
+        /**********************************20190530添加***********/
+        .nav li > a:hover {
+            color: #00a5e3 !important;
+            border-bottom: 3px solid #00a5e3;
+        }
+
+        .nav li > a:hover:after {
+            display: block;
+        }
+
+        #aboutUs {
+            display: none;
+        }
+
+        .navbar-brand {
+            text-align: center;
+            padding: 0 15px;
+        }
+
+            .navbar-brand img {
+                height: 80px;
+                margin-bottom: 4px;
+                margin-left: 24px;
+            }
+
+        .active a {
+            border-bottom: 3px solid #00a5e3;
+        }
+
+        .global-page-header {
+            background-attachment: fixed;
+            background-size: cover;
+            padding: 100px 0 10px 0;
+            position: relative;
+            /*background:#00a5e3;*/
+            color: #fff;
+            background: url(image/contact.jpg) no-repeat;
+            background-position-y: bottom;
+        }
+
+            .global-page-header .block {
+                position: relative;
+                z-index: 99;
+                text-align: center;
+            }
+
+            .global-page-header h2 {
+                font-size: 42px;
+                font-weight: bold;
+                color: #fff;
+                text-transform: uppercase;
+                font-family: 'Roboto Condensed', sans-serif;
+            }
+
+            .global-page-header .breadcrumb {
+                background: none;
+                font-size: 16px;
+                padding: 5px 0;
+            }
+
+                .global-page-header .breadcrumb li a {
+                    color: #fff;
+                }
+
+                .global-page-header .breadcrumb .active {
+                    color: #fff;
+                }
+
+        #contact-section {
+            padding: 0 0 10px 0;
+            background: #fff;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-family: 'Roboto Condensed', sans-serif;
+            color: #00a5e3;
+        }
+
+        #contact-section input {
+            display: block;
+            height: 40px;
+            padding: 6px 12px;
+            font-size: 13px;
+            line-height: 1.428571429;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px !important;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+            -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+            transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+            border: 1px solid rgba(111, 121, 122, 0.3);
+            box-shadow: none;
+            -webkit-box-shadow: none;
+        }
+
+        #contact-section .contact-form .btn-send {
+            margin-top: 25px;
+            color: #fff;
+            outline: none;
+            background: #00a5e3;
+        }
+
+        #contact-section .address-details {
+            padding-top: 70px;
+        }
+
+        #contact-section .address, #contact-section .email, #contact-section .phone {
+            text-align: center;
+            background: #F7F7F7;
+            padding: 20px 0 40px 0;
+            margin-bottom: 20px;
+        }
+
+        strong {
+            color: #00a5e3;
+            font-size: 18px;
+        }
+
+        .glyphicon {
+            color: #00a5e3;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#one">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.html" class="navbar-brand"><img src="image/logo.png" /></a>
+            </div>
+            <div class="navbar-collapse collapse" id="one">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="present.html">公司介绍</a></li>
+                    <li><a href="culture.html">企业文化</a></li>
+                    <li class="active"><a href="#" >机器人展示</a></li>
+                    <li><a href="#" title="正在更新中">用户APP展示</a></li>
+                    <li><a href="#" title="正在更新中">后台管控</a></li>
+                    <li><a href="#" title="正在更新中">点餐系统展示</a></li>
+                    <li><a href="#" title="正在更新中">功能演示</a></li>
+                    <li  onmouseover="onMouseover()" onmouseout="onMouseout()">
+                        <a> 关于壹智云</a>
+                        <ul id="aboutUs" class="nav navbar-nav">
+
+                            <li style="float:none; "><a href="recruit.html">&nbsp;&nbsp;招贤纳士&nbsp;</a></li>
+                            <li style="float:none;"><a href="contact.html">&nbsp;&nbsp;联系我们&nbsp;</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <section id="contact-section">
+        <div class="container">
+            <div class="row" style="width:100%">
+               
+                <div style="margin-top:100px;text-align:center;">
+                    <h3 class="subtitle" style="text-align:left;">产品示意图</h3>
+                    <img style="width:720px; height:450px;" src="image/图片1.png" />
+                </div>
+                <div class="col-md-6" style="width:100%;">
+
+                    <div class="block">
+
+                        <h3 class="subtitle">机器人特点</h3>
+                        <table width="100%">
+                            <tr>
+                                <td><img src="image/图片3.png" /></td>
+                                <td><img src="image/图片4.jpg" /></td>
+                                <td><img src="image/图片5.jpg" /></td>
+                                <td><img src="image/图片6.jpg" /></td>
+                                <td><img src="image/图片7.jpg" /></td>
+                                <td><img src="image/图片8.jpg" /></td>
+                                <td><img src="image/图片9.jpg" /></td>
+                                <td><img src="image/图片10.png" /></td>
+                                <td><img src="image/图片11.jpg" /></td>
+                                <td><img src="image/图片12.jpg" /></td>
+                                <td><img src="image/图片13.jpg" /></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;">模块化设计</td>
+                                <td style="text-align:center;">多种配送模式</td>
+                                <td style="text-align:center;">自主路径规划</td>
+                                <td style="text-align:center;">靠右行驶模式</td>
+                                <td style="text-align:center;">自动巡航</td>
+                                <td style="text-align:center;">自动回充</td>
+                                <td style="text-align:center;">自动避障</td>
+                                <td style="text-align:center;">远程预警</td>
+                                <td style="text-align:center;">远程监控</td>
+                                <td style="text-align:center;">24小时不间断<br />工作</td>
+                                <td style="text-align:center;">广告投放</td>
+                            </tr>
+                        </table>
+
+                        <h3 class="subtitle">版本参数</h3>
+                        <table style="margin:0 auto; font-size:15px;" width="100%" height="300">
+                            <tr>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>充电时间</td>
+                                <td>5h</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>续航时间</td>
+                                <td>>12h</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>单个托盘称重</td>
+                                <td>20kg</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>爬坡坡度</td>
+                                <td>≤10°</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>整机重量</td>
+                                <td>40~60kg</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>整机尺寸</td>
+                                <td>xxx*520*500mm</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+
+</body>
+
+<script type="text/javascript">
+
+    function onMouseover() {
+        var obj = document.getElementById("aboutUs");
+        obj.style.display = "block";
+    }
+    function onMouseout() {
+        var obj = document.getElementById("aboutUs");
+        obj.style.display = "none";
+    }
+
+</script>
+</html>

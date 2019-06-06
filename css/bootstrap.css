@@ -3980,6 +3980,16 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   position: relative;
   display: block;
 }
+
+    .nav li > a:hover {
+        color: #00a5e3 !important;
+        border-bottom: 3px solid #00a5e3;
+    }
+
+#aboutUs {
+    display: none;
+}
+
 .nav > li > a {
   position: relative;
   display: block;

@@ -1,0 +1,475 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Contact</title>
+    <!-- <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+    <!--<link rel="stylesheet" href="css/global.css" />-->
+    <!--<script type="application/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>-->
+    <!--<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+    <script src="js/validate.js"></script>
+    <!--引入百度地图js-->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+    <!--[if lt IE 9]>
+              <script src="js/html5shiv.js"></script>
+              <script src="js/respond.min.js"></script>
+      <![endif]-->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/jq3.2.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style type="text/css">
+        /*引用百度地图API*/
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .iw_poi_title {
+            color: #CC5522;
+            font-size: 14px;
+            font-weight: bold;
+            overflow: hidden;
+            padding-right: 13px;
+            white-space: nowrap
+        }
+
+        .iw_poi_content {
+            font: 12px arial,sans-serif;
+            overflow: visible;
+            padding-top: 4px;
+            white-space: -moz-pre-wrap;
+            word-wrap: break-word
+        }
+
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "微软雅黑";
+        }
+
+        .navbar {
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .container-fluid {
+            font-size: 14px;
+        }
+
+        .navbar-header {
+            height: 80px;
+        }
+
+        .navbar-nav > li > a {
+            height: 80px;
+            line-height: 50px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+            .navbar-nav > li > a:focus {
+                color: #9d9d9d !important;
+            }
+
+            .navbar-nav > li > a:hover {
+                color: #00a5e3 !important;
+                border-bottom: 3px solid #00a5e3;
+            }
+
+                .navbar-nav > li > a:hover:after {
+                    display: block;
+                }
+
+        /**********************************20190530添加***********/
+        .nav li > a:hover {
+            color: #00a5e3 !important;
+            border-bottom: 3px solid #00a5e3;
+        }
+
+        #aboutUs {
+            display: none;
+        }
+
+        .navbar-brand {
+            text-align: center;
+            padding: 0 15px;
+        }
+
+            .navbar-brand img {
+                height: 80px;
+                margin-bottom: 4px;
+                margin-left: 24px;
+            }
+
+   
+         .active a {
+            border-bottom: 3px solid #00a5e3;
+        }
+
+
+        .global-page-header {
+            background-attachment: fixed;
+            background-size: cover;
+            padding: 100px 0 10px 0;
+            position: relative;
+            /*background:#00a5e3;*/
+            color: #fff;
+            background: url(image/contact.jpg) no-repeat;
+            background-position-y: bottom;
+        }
+
+            .global-page-header .block {
+                position: relative;
+                z-index: 99;
+                text-align: center;
+            }
+
+            .global-page-header h2 {
+                font-size: 42px;
+                font-weight: bold;
+                color: #fff;
+                text-transform: uppercase;
+                font-family: 'Roboto Condensed', sans-serif;
+            }
+
+            .global-page-header .breadcrumb {
+                background: none;
+                font-size: 16px;
+                padding: 5px 0;
+            }
+
+                .global-page-header .breadcrumb li a {
+                    color: #fff;
+                }
+
+                .global-page-header .breadcrumb .active {
+                    color: #fff;
+                }
+
+        #contact-section {
+            padding: 0 0 10px 0;
+            background: #fff;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-family: 'Roboto Condensed', sans-serif;
+            color: #00a5e3;
+        }
+
+        #contact-section input {
+            display: block;
+            height: 40px;
+            padding: 6px 12px;
+            font-size: 13px;
+            line-height: 1.428571429;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px !important;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+            -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+            transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+            border: 1px solid rgba(111, 121, 122, 0.3);
+            box-shadow: none;
+            -webkit-box-shadow: none;
+        }
+
+        #contact-section .contact-form .btn-send {
+            margin-top: 25px;
+            color: #fff;
+            outline: none;
+            background: #00a5e3;
+        }
+
+        #contact-section .address-details {
+            padding-top: 70px;
+        }
+
+        #contact-section .address, #contact-section .email, #contact-section .phone {
+            text-align: center;
+            background: #F7F7F7;
+            padding: 20px 0 40px 0;
+            margin-bottom: 20px;
+        }
+
+        strong {
+            color: #00a5e3;
+            font-size: 18px;
+        }
+
+        .glyphicon {
+            color: #00a5e3;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#one">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.html" class="navbar-brand"><img src="image/logo.png" /></a>
+            </div>
+            <div class="navbar-collapse collapse" id="one">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="present.html">公司介绍</a></li>
+                    <li><a href="culture.html">企业文化</a></li>
+                    <li><a href="robot.html">机器人展示</a></li>
+                    <li><a href="#" title="正在更新中">用户APP展示</a></li>
+                    <li><a href="#" title="正在更新中">后台管控</a></li>
+                    <li><a href="#" title="正在更新中">点餐系统展示</a></li>
+                    <li><a href="#" title="正在更新中">功能演示</a></li>
+                    <li class="active" onmouseover="onMouseover()" onmouseout="onMouseout()">
+                        <a> 关于壹智云</a>
+                        <ul id="aboutUs" class="nav navbar-nav">
+
+                            <li style="float:none; "><a href="#">&nbsp;&nbsp;招贤纳士&nbsp;</a></li>
+                            <li style="float:none;"><a href="contact.html">&nbsp;&nbsp;联系我们&nbsp;</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--联系我们-->
+    <section class="global-page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h2>Recruit</h2>
+                        <ol class="breadcrumb">
+                            <li>
+                                <a href="index.html">
+                                    <i class="glyphicon glyphicon-home" aria-hidden="true"></i>Home
+                                </a>
+                            </li>
+                            <li class="active">Recruit</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <section id="contact-section">
+        <div class="container">
+            <div class="row">
+                <br/>
+                <div class="col-md-4 col-sm-7">
+                    <p style="font-size:12px;line-height:30px;color:#666;">
+                        <i class="glyphicon glyphicon-edit"></i>
+                        <strong style="font-size:23px;">联系方式</strong>
+                        <br>Email：<u>kongguanghua@idea-a.com.cn</u>&nbsp;(人事部)
+                        <br>工作地址：<u>深圳市宝安区宝源路互联网产业基地A区1栋B603</u> 
+                    </p>
+                </div>
+                <div class="col-md-6" style="width:80%;">
+
+                    <div class="block">
+                        <h2 class="subtitle">招聘职位</h2>
+                        <div class="contact-form">
+                            <br />
+                            <h5> <b>嵌入式软件工程师</b></h5>
+                            <hr style="background-color:black; height:1px; margin:1px;" />
+                            <p>
+                                岗位职责
+                            </p>
+                            <p>
+                                1、ARM系列，单片机系列产品硬件设计
+                                <br />
+                                2、机器人外部传感器的选型调试和软件设计
+                                <br />
+                                3、通讯协议解析
+                                <br />
+                                4、编写相关技术文档
+                            </p>
+                            <p>
+                                任职要求：
+                            </p>
+                            <p>
+                                1、熟练掌握单片机C语言编程，有一定的硬件电路知识。
+                                <br />
+                                2、熟悉STM32单片机。掌握SPI,IIC,UART通信，掌握ADC,DAC。
+                                <br />
+                                3、有良好的编程思路与代码风格，懂得模块化编程、裸机多任务实时处理编程。
+                                <br />
+                                4、熟悉USB、TCP、CAN协议和μC/OS等实时系统者优先。
+                                <br />
+                                5、责任心强，为人友善，有团队协作精神，好学向上，有精益求精的工作态度。
+                                <br />
+                                6、符合上述要求，技术过硬、实践经验丰富的应届毕业生亦可。
+                                <br />
+                                7、有机器人、无人机、人工智能经验者优先。
+                                <br />
+                                8、会画原理图、PCB者优先。
+                            </p>
+
+                            <br />
+                            <h5> <b>后台开发人员</b></h5>
+                            <hr style="background-color:black; height:1px; margin:1px;" />
+                            <p>
+                                岗位职责
+                            </p>
+                            <p>
+                                1、根据项目需求完成项目的设计方案，并按照设计方案和规范进行编码开发；
+                                <br />
+                                2、完成项目的代码设计、调试、并解决研发过程中遇到的问题；
+                                <br />
+                                3、参与系统核心部分的开发，独立进行系统新功能的需求分析和设计
+                                <br />
+                                4、根据产品需求，负责iOS和Android后台服务端的设计、开发、测试，以及iOS和Android
+                                的APP与服务器端的数据对接等；
+                                <br />
+                                5、能够对技术难点进行攻关，发现和解决存在的性能瓶颈等技术难题；
+                                <br />
+                                6、注重系统高可用、可靠、可扩展及安全方面的细节；
+                                <br />
+                                7、app性能及内存调优，优化产品性能，安全加固，保证App安全、稳定、快速运行兼
+                                且省电、省流量。
+                            </p>
+                            <p>
+                                任职要求：
+                            </p>
+                            <p>
+                                1、本科以上学历，精通Java语言，2年以上Java开发经验，软件工程/计算机等相关专业，
+                                具备良好的英语读写水平；<br />
+                                2、扎实的java基础知识功底，理解IO、NIO、多线程编程、集合等基础框架，以及JVM
+                                原理和性能调优；<br />
+                                3、熟悉B/S项目客户端技术，包括HTML、CSS、JavaScript、Ajax等技术优先；
+                                <br />
+                                4、熟悉SQLServer,Oracle,DB2等关系型数据库的配置与部署技术，能够熟练使用SQL
+                                语言，能够根据需求进行数据库建模；<br />
+                                5、有移动互联网产品研发经验，如移动端app、webapp，具有市场成功产品案例者优先。
+                                <br />
+                                6、有服务器开发，多并发处理经验者优先。
+                            </p>
+
+
+
+                            <br />
+                            <h5> <b>产品经理</b></h5>
+                            <hr style="background-color:black; height:1px; margin:1px;" />
+                            <p>
+                                岗位职责
+                            </p>
+                            <p>
+                                1、市场调研：调研客户需求；<br />
+                                2、需求分析：形成文档。（市场需求分析文档）；<br />
+                                3、产品规划：根据市场需求和分享规划产品发展路线，定义软件产品、功能模块和交互设计；<br />
+                                4、产品开发：在软件开发前，完成交付给开发和测试团队产品需求文档，功能定义，协同用户体验设计师
+                                完成视觉设计，用户界面（UI），交互设计等详细设计文档；<br />
+                                5、产品验收：协助项目管理部门，跟踪产品开发进度，完成产品的开发、测试、版本管理，评审发布，产
+                                品上线等相关工作；<br />
+                                6、产品推广：配合销售部进行软件推广策划；<br />
+                                7、日常产品管理：管理日常中出现的设计、交互和UI方面的bug等问题。<br />
+                                8、后期维护：跟踪上线产品的市场效果、用户反馈，收集和主动挖掘改进需求，根据业务需要持续改进产
+                                品，提升用户体验；
+                            </p>
+                            <p>
+                                任职要求：
+                            </p>
+                            <p>
+                                1.全日制本科及以上学历；<br />
+                                2.软件行业背景，熟悉软件开发、软件产品规划；<br />
+                                3.有2年以上软件研发经验，3年以上软件产品规划经验；<br />
+                                4.良好的沟通、协调能力；<br />
+                                5.熟悉产品研发管理流程；<br />
+                                6.具有良好的沟通及写作能力。
+                            </p>
+
+                            <br />
+                            <h5> <b>后台开发工程师(java)</b></h5>
+                            <hr style="background-color:black; height:1px; margin:1px;" />
+                            <p>
+                                岗位职责
+                            </p>
+                            <p>
+                                1、协助项目经理和技术经理，完成任务分工和认领；<br />
+                                2、负责数据库设计、系统详细设计、编码和自测工作；<br />
+                                3、协助技术经理，完成代码走查、交叉测试和单元测试等活动；<br />
+                                4、负责解决单元测试、集成测试、UAT及线上的技术问题。
+                            </p>
+                            <p>
+                                任职要求：
+                            </p>
+                            <p>
+                                1、本科及以上学历，计算机相关专业；<br />
+                                2、1-3年以上Java开发经验，Java基础功底扎实，具有良好的编码风格和开发习惯；<br />
+                                3、熟悉MVC设计模式，熟练掌握SSH等开发框架；熟练掌握Maven、Ant等常用工具；<br />
+                                4、熟悉Tomcat、Weblogic、JBoss等主流应用服务器；<br />
+                                5、熟悉各种Web前端技术，包括XHTML/XML/Ajax/CSS/Javascript/jQuery等；<br />
+                                6、熟悉使用Oracle、Mysql等常用数据库系统，熟练掌握SQL；<br />
+                                7、熟悉UML建模工具，能进行分析和设计；<br />
+                                8、有良好的逻辑思维能力和团队合作，快速分析和解决问题的能力，有平台设计及系统架构经验为佳；<br />
+                                9、工作积极主动、踏实严谨；学习能力强；责任心强、抗压能力强。
+                            </p>
+
+
+                            <br />
+                            <h5> <b>前端开发工程师(web) </b></h5>
+                            <hr style="background-color:black; height:1px; margin:1px;" />
+                            <p>
+                                岗位职责
+                            </p>
+                            <p>
+                                1、负责web开发项目，负责前端交互开发；<br />
+                                2、负责项目各界面JS交互动态效果开发；<br />
+                                3、产品的持续改进，如优化数据交互接口、帮助前端提升用户体验等。
+                            </p>
+                            <p>
+                                任职要求：
+                            </p>
+                            <p>
+                                1、本科及以上学历，计算机或相关专业毕业，3年以上前端开发经验；<br />
+                                2、前端基础技术扎实，精通HTML4/HTML5、CSS2/CSS3、ES5/ES6、Saas/Less、JS/jQuery等Web标准技术；<br />
+                                3、熟练使用Angular、Vue、React等主流前端框架（至少一种），并且理解框架设计原理，有RN（react-native）开发经验更佳；<br />
+                                4、对前端工程化、模块化有自己的理解，并且能熟练使用Webpack、Gulp等前端打包工具；<br />
+                                5、熟悉常见的跨域以及浏览器兼容性问题，有前端性能优化经验更佳；<br />
+                                6、有良好的学习能力、强烈的进取心和创新意识；<br />
+                                7、工作认真负责，尽职尽责，具备高度协作意识。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        
+        </div>
+    </section>
+
+
+</body>
+<!--提交留言验证-->
+<script type="text/javascript">
+
+    function onMouseover() {
+        var obj = document.getElementById("aboutUs");
+        obj.style.display = "block";
+    }
+    function onMouseout() {
+        var obj = document.getElementById("aboutUs");
+        obj.style.display = "none";
+    }
+ 
+</script>
+
+ 
+</html>

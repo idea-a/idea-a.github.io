@@ -47,7 +47,15 @@
             box-sizing: border-box;
             overflow: hidden;
         }
+          /**********************************20190530添加***********/
+        .nav li > a:hover {
+            color: #00a5e3 !important;
+            border-bottom: 3px solid #00a5e3;
+        }
 
+        #aboutUs {
+            display: none;
+        }
         .navbar-nav > li > a {
             color: grey;
         }
@@ -141,12 +149,19 @@
                     <li class="active"><a href="#">首页</a></li>
                     <li><a href="present.html">公司介绍</a></li>
                     <li><a href="culture.html">企业文化</a></li>
-                    <li><a href="#" title="正在更新中">机器人展示</a></li>
+                    <li><a href="robot.html">机器人展示</a></li>
                     <li><a href="#" title="正在更新中">用户APP展示</a></li>
                     <li><a href="#" title="正在更新中">后台管控</a></li>
                     <li><a href="#" title="正在更新中">点餐系统展示</a></li>
                     <li><a href="#" title="正在更新中">功能演示</a></li>
-                    <li><a href="contact.html">联系我们</a></li>
+                    <li  onmouseover="onMouseover()" onmouseout="onMouseout()">
+                        <a> 关于壹智云</a>
+                        <ul id="aboutUs" class="nav navbar-nav">
+
+                            <li style="float:none; "><a href="recruit.html">&nbsp;&nbsp;招贤纳士&nbsp;</a></li>
+                            <li style="float:none;"><a href="contact.html">&nbsp;&nbsp;联系我们&nbsp;</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             </div>
@@ -163,5 +178,18 @@
             <p class="lead">部分功能已实现,不便公开,如有兴趣,请<a href="contact.html">联系我们</a></p>
         </div>
     </div>
+<script type="text/javascript">
+    
+function onMouseover() {
+    var obj = document.getElementById("aboutUs");
+    obj.style.display = "block";
+}
+function onMouseout() {
+    var obj = document.getElementById("aboutUs");
+    obj.style.display = "none";
+}
+
+</script>
 </body>
+
 </html>

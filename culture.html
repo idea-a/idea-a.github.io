@@ -41,6 +41,17 @@
             font-size: 14px;
         }
 
+        
+        /**********************************20190530添加***********/
+        .nav li > a:hover {
+            color: #00a5e3 !important;
+            border-bottom: 3px solid #00a5e3;
+        }
+
+        #aboutUs {
+            display: none;
+        }
+
         .navbar-header {
             height: 80px;
         }
@@ -141,44 +152,65 @@
                     <li><a href="index.html">首页</a></li>
                     <li><a href="present.html">公司介绍</a></li>
                     <li class="active"><a href="#">企业文化</a></li>
-                    <li><a href="#" title="正在更新中">机器人展示</a></li>
+                    <li><a href="robot.html">机器人展示</a></li>
                     <li><a href="#" title="正在更新中">用户APP展示</a></li>
                     <li><a href="#" title="正在更新中">后台管控</a></li>
                     <li><a href="#" title="正在更新中">点餐系统展示</a></li>
                     <li><a href="#" title="正在更新中">功能演示</a></li>
-                    <li><a href="contact.html">联系我们</a></li>
-            
+                    <li   onmouseover="onMouseover()" onmouseout="onMouseout()">
+                        <a> 关于壹智云</a>
+                        <ul id="aboutUs" class="nav navbar-nav">
+
+                            <li style="float:none; "><a href="recruit.html">&nbsp;&nbsp;招贤纳士&nbsp;</a></li>
+                            <li style="float:none;"><a href="contact.html">&nbsp;&nbsp;联系我们&nbsp;</a></li>
+                        </ul>
+                    </li>
+
                 </ul>
             </div>
-            </div>
+        </div>
     </nav>
     <div class="container" style="margin-top:150px;text-align:center;">
         <div class="row">
-        	<div class="col-md-3">
-        		<h2>准</h2>
-        		<img src="image/ee.png" alt="Generic placeholder image">
-            	<h4>顺势而为，精准发力，定战略</h4>
-            	<p>战略定位须认准世界经济发展趋势，乘风破浪，顺势而上，顺之则兴，逆之则败。须认准现代经济发展方向，着眼国内外市场，精准发力，有的放矢，一箭中的。须认准高新技术，发展支柱产业，建设实体大厦，夯实发展基础</p>
-        	</div>
-        	<div class="col-md-3">
-        		<h2>强</h2>
-        		<img src="image/bb.png" alt="Generic placeholder image">
-            	<h4>顺市而为、做大做强，定模式</h4>
-            	<p>企业模式须顺应市场需求，遵循经济规律，夯实发展基础，集聚发展力量，力戒小而全，追求大而优，力戒粗放经营，追求集约经营，依靠联优联强，运用科技手段，谋求规模效益</p>
-        	</div>
-        	<div class="col-md-3">
-        		<h2>优</h2>
-        		<img src="image/cc.png" alt="Generic placeholder image">
-            	<h4>顺事而为、优质高效，建系统</h4>
-            	<p>凡事预则立，不预则废，立足优势，发挥特色，创造革新创新氛围。立足优质，优胜劣汰，打造精品力作，提升经济品味。立足高效，敢于闯关，勇于竞争，善于合作，精于把握，抢占先机，抢夺市场份额，谋求最佳效益</p>
-        	</div>
-        	<div class="col-md-3">
-        		<h2>久</h2>
-        		<img src="image/gg.png" alt="Generic placeholder image">
-            	<h4>顺是而为，责任担当，建文化</h4>
-            	<p>建立长效机制，避免短期行为，发展企业文化，建设现代制度，提升人员素质，弘扬团队精神，强化企业管理，增强（员工对项目、对企业，企业对员工、对客户，企业对社会的全方位）责任担当，塑造企业形象，确保长久兴旺、长治久安</p>
-        	</div>
+            <div class="col-md-3">
+                <h2>准</h2>
+                <img src="image/ee.png" alt="Generic placeholder image">
+                <h4>顺势而为，精准发力，定战略</h4>
+                <p>战略定位须认准世界经济发展趋势，乘风破浪，顺势而上，顺之则兴，逆之则败。须认准现代经济发展方向，着眼国内外市场，精准发力，有的放矢，一箭中的。须认准高新技术，发展支柱产业，建设实体大厦，夯实发展基础</p>
+            </div>
+            <div class="col-md-3">
+                <h2>强</h2>
+                <img src="image/bb.png" alt="Generic placeholder image">
+                <h4>顺市而为、做大做强，定模式</h4>
+                <p>企业模式须顺应市场需求，遵循经济规律，夯实发展基础，集聚发展力量，力戒小而全，追求大而优，力戒粗放经营，追求集约经营，依靠联优联强，运用科技手段，谋求规模效益</p>
+            </div>
+            <div class="col-md-3">
+                <h2>优</h2>
+                <img src="image/cc.png" alt="Generic placeholder image">
+                <h4>顺事而为、优质高效，建系统</h4>
+                <p>凡事预则立，不预则废，立足优势，发挥特色，创造革新创新氛围。立足优质，优胜劣汰，打造精品力作，提升经济品味。立足高效，敢于闯关，勇于竞争，善于合作，精于把握，抢占先机，抢夺市场份额，谋求最佳效益</p>
+            </div>
+            <div class="col-md-3">
+                <h2>久</h2>
+                <img src="image/gg.png" alt="Generic placeholder image">
+                <h4>顺是而为，责任担当，建文化</h4>
+                <p>建立长效机制，避免短期行为，发展企业文化，建设现代制度，提升人员素质，弘扬团队精神，强化企业管理，增强（员工对项目、对企业，企业对员工、对客户，企业对社会的全方位）责任担当，塑造企业形象，确保长久兴旺、长治久安</p>
+            </div>
         </div>
     </div>
+
+
+    <script type="text/javascript">
+
+        function onMouseover() {
+            var obj = document.getElementById("aboutUs");
+            obj.style.display = "block";
+        }
+        function onMouseout() {
+            var obj = document.getElementById("aboutUs");
+            obj.style.display = "none";
+        }
+
+    </script>
 </body>
 </html>

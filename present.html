@@ -29,6 +29,16 @@
             background-size: cover;
             height: 100%
         }
+        
+        /**********************************20190530添加***********/
+        .nav li > a:hover {
+            color: #00a5e3 !important;
+            border-bottom: 3px solid #00a5e3;
+        }
+
+        #aboutUs {
+            display: none;
+        }
 
         body {
             background: none;
@@ -131,63 +141,81 @@
                     <li><a href="index.html">首页</a></li>
                     <li class="active"><a href="#">公司介绍</a></li>
                     <li><a href="culture.html">企业文化</a></li>
-                    <li><a href="#" title="正在更新中">机器人展示</a></li>
+                    <li><a href="robot.html">机器人展示</a></li>
                     <li><a href="#" title="正在更新中">用户APP展示</a></li>
                     <li><a href="#" title="正在更新中">后台管控</a></li>
                     <li><a href="#" title="正在更新中">点餐系统展示</a></li>
                     <li><a href="#" title="正在更新中">功能演示</a></li>
-                    <li><a href="contact.html">联系我们</a></li>
-                 
+                    <li   onmouseover="onMouseover()" onmouseout="onMouseout()">
+                        <a> 关于壹智云</a>
+                        <ul id="aboutUs" class="nav navbar-nav">
+
+                            <li style="float:none; "><a href="recruit.html">&nbsp;&nbsp;招贤纳士&nbsp;</a></li>
+                            <li style="float:none;"><a href="contact.html">&nbsp;&nbsp;联系我们&nbsp;</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
-            </div>
+        </div>
     </nav>
     <div class="container marketing" style="margin-top:150px;">
-    	<div class="row">
-        <div class="col-md-7">
-            <h3 class="featurette-heading">壹智云介绍</h3>
-            <p class="lead">
-                深圳壹智云技术有限公司成立于2018年12月，是一家从事智能模块化餐厅机器人、智能餐厅设备及其管理系统的产品开发、制造、融合、运营、数据管理分析及销售的高科技集成商，为客户提供配套智能餐厅方案。用人工智能和大数据的智能餐厅系统方案为不同的餐饮场所提供配套服务。
-            </p>
- 
-        </div>
-        <div class="col-md-5">
-        	<!--轮播-->
-        	<div data-ride="carousel" id="carousel_container" class="carousel slide" style="border-radius:10px !important;overflow:hidden;">
-                <!--图片容器-->
-                <div class="carousel-inner" style="border-radius:10px !important;overflow:hidden;">
-                    <div class="item active"><img src="image/IMG_4704.JPG"></div>
-                    <div class="item"><img src="image/gs2.png"></div>
-                    <div class="item"><img src="image/gs3.png"></div>
-                    <div class="item"><img src="image/gs4.png"></div>
+        <div class="row">
+            <div class="col-md-7">
+                <h3 class="featurette-heading">壹智云介绍</h3>
+                <p class="lead">
+                    深圳壹智云技术有限公司成立于2018年12月，是一家从事智能模块化餐厅机器人、智能餐厅设备及其管理系统的产品开发、制造、融合、运营、数据管理分析及销售的高科技集成商，为客户提供配套智能餐厅方案。用人工智能和大数据的智能餐厅系统方案为不同的餐饮场所提供配套服务。
+                </p>
+
+            </div>
+            <div class="col-md-5">
+                <!--轮播-->
+                <div data-ride="carousel" id="carousel_container" class="carousel slide" style="border-radius:10px !important;overflow:hidden;">
+                    <!--图片容器-->
+                    <div class="carousel-inner" style="border-radius:10px !important;overflow:hidden;">
+                        <div class="item active"><img src="image/IMG_4704.JPG"></div>
+                        <div class="item"><img src="image/gs2.png"></div>
+                        <div class="item"><img src="image/gs3.png"></div>
+                        <div class="item"><img src="image/gs4.png"></div>
+                    </div>
+                    <!--小圆圈容器-->
+                    <ol class="carousel-indicators">
+                        <li data-slide-to="0" data-target="#carousel_container" class="active"></li>
+                        <li data-slide-to="1" data-target="#carousel_container"></li>
+                        <li data-slide-to="2" data-target="#carousel_container"></li>
+                        <li data-slide-to="3" data-target="#carousel_container"></li>
+                    </ol>
+                    <!--左右按钮容器-->
+                    <a href="#carousel_container" data-slide="prev" class="left carousel-control">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a href="#carousel_container" data-slide="next" class="right carousel-control">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
                 </div>
-                <!--小圆圈容器-->
-                <ol class="carousel-indicators">
-                    <li data-slide-to="0" data-target="#carousel_container" class="active"></li>
-                    <li data-slide-to="1" data-target="#carousel_container"></li>
-                    <li data-slide-to="2" data-target="#carousel_container"></li>
-                    <li data-slide-to="3" data-target="#carousel_container"></li>
-                </ol>
-                <!--左右按钮容器-->
-                <a href="#carousel_container" data-slide="prev" class="left carousel-control">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                <a href="#carousel_container" data-slide="next" class="right carousel-control">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
             </div>
         </div>
-    	</div>
-    	<div class="row" style="margin-top:30px;">
-    		<div class="col-md-6">
-    			<h3 class="featurette-heading">公司愿景</h3>
+        <div class="row" style="margin-top:30px;">
+            <div class="col-md-6">
+                <h3 class="featurette-heading">公司愿景</h3>
                 <p class="lead">成为全球智能餐厅系统的领导者</p>
-    		</div>
-    		<div class="col-md-6">
-    			<h3 class="featurette-heading">公司价值观</h3>
+            </div>
+            <div class="col-md-6">
+                <h3 class="featurette-heading">公司价值观</h3>
                 <p class="lead">通过智能化服务，为社会和客户带来价值体验</p>
-    		</div>
-    	</div>
+            </div>
+        </div>
     </div>
+    <script type="text/javascript">
+
+        function onMouseover() {
+            var obj = document.getElementById("aboutUs");
+            obj.style.display = "block";
+        }
+        function onMouseout() {
+            var obj = document.getElementById("aboutUs");
+            obj.style.display = "none";
+        }
+
+    </script>
 </body>
 </html>
